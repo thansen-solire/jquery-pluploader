@@ -208,7 +208,9 @@
             params = $.extend({}, defaults, givenParams),
             paramsPlupload = $.extend({}, defaultsPlupload),
             initUploader = function(){
-                var domId, parentDomId;
+                var domId,
+                    parentDom = null,
+                    parentDomId = null;
 
                 $(this).unbind('click').click(function(evnt){
                    evnt.preventDefault();
@@ -223,18 +225,50 @@
                 }
                 paramsPlupload.browse_button = domId;
 
-                parentDomId = $(this).parent().attr('id');
-                if (parentDomId == null || parentDomId == ''
-                    || $('[id=' + parentDomId + ']').length > 1
+                if ('drop_element' in params
+                    && params.drop_element != null
                 ) {
-                    parentDomId = randomId('pluploader-container-');
-                    $(this).parent().attr('id', parentDomId);
+                    switch (typeof params.drop_element) {
+                        case 'string' :
+                            if ($(params.drop_element).length > 0) {
+                                parentDom = $(params.drop_element);
+                            } else {
+                                if ($('#' + params.drop_element).length > 0) {
+                                    parentDom = $(params.drop_element);
+                                }
+                            }
+                        break;
+
+                        case 'function' :
+                            parentDom = params.drop_element.call(this);
+                            if (!parentDom instanceof jQuery) {
+                                parentDom = null;
+                            }
+                        break;
+
+                        default :
+                            if (params.drop_element instanceof jQuery) {
+                                parentDom = params.drop_element;
+                            }
+                        break;
+                    }
                 }
-                paramsPlupload.container = $(this).parent().attr('id');
-                paramsPlupload.drop_element = $(this).parent().attr('id');
+
+                if (parentDom != null) {
+                    parentDomId = parentDom.attr('id');
+                    if (parentDomId == null || parentDomId == ''
+                        || $('[id=' + parentDomId + ']').length > 1
+                    ) {
+                        parentDomId = randomId('pluploader-container-');
+                        parentDom.attr('id', parentDomId);
+                    }
+                    paramsPlupload.drop_element = parentDomId;
+//                    paramsPlupload.container    = parentDomId;
+                }
 
                 this.uploader = _createUploader(this, paramsPlupload, params);
-            }, key;
+            },
+            key;
 
         paramsPlupload.flash_swf_url        = params.baseHref + paramsPlupload.flash_swf_url;
         paramsPlupload.silverlight_xap_url  = params.baseHref + paramsPlupload.silverlight_xap_url;
