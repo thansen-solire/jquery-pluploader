@@ -4,7 +4,8 @@
   "main": "jquery.pluploader.js",
   "author": "thansen",
   "dependencies": {
-    "jquery": ">=1.5"
+    "jquery": ">=1.5",
+    "plupload": "~2.0",
   },
   "ignore": [
     "nbproject",
