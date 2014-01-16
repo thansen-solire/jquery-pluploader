@@ -1,6 +1,6 @@
 /**
  * @author Thomas <thansen@solire.fr>
- * @licence Solire <http://www.solire.fr>
+ * @licence CC BY-NC 4.0 http://creativecommons.org/licenses/by-nc/4.0/
  */
 (function($) {
     var Pluploader = function(givenParams) {
