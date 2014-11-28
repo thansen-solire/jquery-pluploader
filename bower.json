@@ -1,7 +1,9 @@
 {
   "name": "jquery plupload",
   "main": "jquery.pluploader.js",
-  "author": "thansen",
+  "author": "thansen-solire",
+  "license": "CC BY-NC 4.0",
+  "main": "dist/jquery.pluploader.min.js",
   "dependencies": {
     "jquery": ">=1.5",
     "plupload": "~2.0"
