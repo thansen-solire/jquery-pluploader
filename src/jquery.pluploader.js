@@ -1,4 +1,4 @@
-/**
+/*!
  * @author Thomas <thansen@solire.fr>
  * @licence CC BY-NC 4.0 http://creativecommons.org/licenses/by-nc/4.0/
  */
@@ -263,7 +263,6 @@
                         parentDom.attr('id', parentDomId);
                     }
                     paramsPlupload.drop_element = parentDomId;
-//                    paramsPlupload.container    = parentDomId;
                 }
 
                 this.uploader = _createUploader(this, paramsPlupload, params);
