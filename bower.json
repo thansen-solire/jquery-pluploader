@@ -1,6 +1,5 @@
 {
   "name": "jquery plupload",
-  "version": "1.0.4",
   "main": "jquery.pluploader.js",
   "author": "thansen",
   "dependencies": {
