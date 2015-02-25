@@ -1,10 +1,10 @@
 {
-  "name": "jquery-plupload",
+  "name": "jquery-pluploader",
   "description": "Provide a jquery pluggin for plupload",
-  "homepage": "https://github.com/thansen-solire/jquery.pluploader.js",
+  "homepage": "https://github.com/thansen-solire/jquery-pluploader",
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/thansen-solire/jquery.pluploader.js.git"
+    "url" : "https://github.com/thansen-solire/jquery-pluploader.git"
   },
   "dependencies": {},
   "devDependencies": {
