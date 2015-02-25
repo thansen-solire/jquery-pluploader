@@ -1,6 +1,5 @@
 {
-  "name": "jquery plupload",
-  "main": "jquery.pluploader.js",
+  "name": "jquery-plupload",
   "author": "thansen-solire",
   "license": "CC BY-NC 4.0",
   "main": "dist/jquery.pluploader.min.js",
