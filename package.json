@@ -1,5 +1,6 @@
 {
   "name": "jquery-pluploader",
+  "version": "1.1.6",
   "description": "Provide a jquery pluggin for plupload",
   "homepage": "https://github.com/thansen-solire/jquery-pluploader",
   "repository" : {

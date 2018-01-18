@@ -1,6 +1,7 @@
 {
   "name": "jquery-pluploader",
-  "author": "thansen-solire",
+  "version": "1.1.6",
+  "author": "polinome",
   "license": "CC BY-NC 4.0",
   "main": "dist/jquery.pluploader.min.js",
   "dependencies": {
